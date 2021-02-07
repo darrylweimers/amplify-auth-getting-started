@@ -33,6 +33,7 @@ class AuthController: UIViewController {
     // MARK: - setup
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loginForm = .signUp
         // Do any additional setup after loading the view.
         checkAuthStatus()
     }
@@ -71,6 +72,7 @@ class AuthController: UIViewController {
                 } else {
                     print("user is signed out")
                     DispatchQueue.main.async {
+                        self.loginForm = .signUp
                         self.add(self.loginController)
                     }
                 }

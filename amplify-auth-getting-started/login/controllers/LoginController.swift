@@ -43,6 +43,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         super.init(nibName: nil, bundle: nil)
         
         self.updateContent(with: loginData, and: loginForm)
+        
+        setupViews(superview: self.view)
     }
     
     required init?(coder: NSCoder) {
@@ -63,21 +65,38 @@ class LoginController: UIViewController, UITextFieldDelegate {
         /// dismiss keyboard
         dismissKeyboardWhenNotUse()
     }
+    private var loginViewHeightConstraint: NSLayoutConstraint?
+    
+    private func updateLoginViewHeightConstraint() {
+        // disable the height constraint
+        loginViewHeightConstraint?.isActive = false
+        
+        // calculate height needed for the login view
+        let spacing: CGFloat = 8
+        let width = UIScreen.main.bounds.width - spacing * 2
+        let size = CGSize.getSizeWithFittingHeight(view: loginView, andRequiredWidth: width)
+        
+        // enable height
+        loginViewHeightConstraint = loginView.heightAnchor.constraint(equalToConstant: size.height)
+        loginViewHeightConstraint?.isActive = true
+        
+        //print(size)
+        
+        self.view.updateConstraintsIfNeeded()
+    }
     
     private func setupViews(superview: UIView) {
         superview.addSubview(loginView)
         superview.addSubview(agreementLabel)
         superview.addSubview(recoverySuggesionLabel)
-        
         let spacing: CGFloat = 8
-        let width = UIScreen.main.bounds.width - spacing * 2
-        let size = CGSize.getSizeWithFittingHeight(view: loginView, andRequiredWidth: width)
+        
+        updateLoginViewHeightConstraint()
         
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: spacing), // TODO: prefer spacing: spacing * 16, but need to scroll up content when keyboard appears
-            loginView.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            loginView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
-            loginView.heightAnchor.constraint(equalToConstant: size.height)
+            loginView.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: spacing),
+            loginView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -spacing),
         ])
         
         NSLayoutConstraint.activate([
@@ -91,12 +110,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
             agreementLabel.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
             agreementLabel.bottomAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
+
     }
     
     private func setupDelegates() {
         loginView.usernameTextField.textField.delegate = self
         loginView.passwordTextField.textField.delegate = self
+        loginView.emailTextField.textField.delegate = self
     }
     
     // MARK: - update content
@@ -143,7 +163,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             break
         }
         
-        // TODO: update height constraint
+        updateLoginViewHeightConstraint()
     }
 
     // MARK: - text field delegate

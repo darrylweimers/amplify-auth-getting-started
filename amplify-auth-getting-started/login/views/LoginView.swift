@@ -38,6 +38,7 @@ class LoginView: UIView {
         let textField = TextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textField.textContentType = .name // default
+        textField.backgroundColor = .clear
         return textField
     }()
     
@@ -45,6 +46,7 @@ class LoginView: UIView {
         let textField = TextField(frame: .zero)
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textField.textContentType = .emailAddress // default
+        textField.backgroundColor = .clear
         return textField
     }()
     
@@ -53,6 +55,7 @@ class LoginView: UIView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.textField.textContentType = .password // default
         textField.textField.isSecureTextEntry = true
+        textField.backgroundColor = .clear
         return textField
     }()
     
@@ -62,8 +65,9 @@ class LoginView: UIView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 8
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .center
+        stackView.backgroundColor = .clear
         return stackView
     }()
     
@@ -75,6 +79,7 @@ class LoginView: UIView {
         stackView.spacing = credentialStackSpacing
         stackView.distribution = .fillEqually
         stackView.alignment = .fill
+        stackView.backgroundColor = .clear
         return stackView
     }()
     
@@ -85,7 +90,7 @@ class LoginView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 16 * 2
         stackView.distribution = .fillEqually
-        stackView.alignment = .center
+        stackView.alignment = .fill
         return stackView
     }()
     
@@ -117,7 +122,8 @@ class LoginView: UIView {
         NSLayoutConstraint.activate([
             rootStackView.topAnchor.constraint(equalTo: superview.topAnchor),
             rootStackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -spaceBetweenTextFieldAndButton),
-            rootStackView.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+            rootStackView.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            rootStackView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([
