@@ -99,6 +99,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             loginView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -spacing),
         ])
         
+        loginView.backgroundColor = .clear
         NSLayoutConstraint.activate([
             recoverySuggesionLabel.topAnchor.constraint(equalTo: loginView.bottomAnchor, constant: spacing * 4),
             recoverySuggesionLabel.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: spacing * 2),

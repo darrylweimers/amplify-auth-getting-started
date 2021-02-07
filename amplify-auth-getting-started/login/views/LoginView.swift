@@ -10,7 +10,7 @@ import UIKit
 class LoginView: UIView {
     
     lazy var spacing: CGFloat = 8
-    lazy var spaceBetweenTextFieldAndButton: CGFloat = spacing * 6
+    lazy var stackSpacer: CGFloat = spacing * 6
     lazy var headerStackSpacing: CGFloat = spacing * 4
     lazy var credentialStackSpacing: CGFloat = spacing * 4
     
@@ -64,7 +64,7 @@ class LoginView: UIView {
         let stackView = UIStackView(arrangedSubviews: subviews)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = headerStackSpacing
         stackView.distribution = .equalSpacing
         stackView.alignment = .center
         stackView.backgroundColor = .clear
@@ -82,18 +82,7 @@ class LoginView: UIView {
         stackView.backgroundColor = .clear
         return stackView
     }()
-    
-    lazy var rootStackView: UIStackView = {
-        let subviews:[UIView] = [headerStackView, credentialStackView]
-        let stackView = UIStackView(arrangedSubviews: subviews)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.spacing = 16 * 2
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        return stackView
-    }()
-    
+
     /// sign up or sign in
     lazy var loginButton: UIButton = {
         let button = UIButton()
@@ -116,18 +105,26 @@ class LoginView: UIView {
     }
     
     private func setupViews(superview: UIView) {
-        superview.addSubview(rootStackView)
+        superview.addSubview(headerStackView)
+        superview.addSubview(credentialStackView)
         superview.addSubview(loginButton)
         
         NSLayoutConstraint.activate([
-            rootStackView.topAnchor.constraint(equalTo: superview.topAnchor),
-            rootStackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -spaceBetweenTextFieldAndButton),
-            rootStackView.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
-            rootStackView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+            headerStackView.topAnchor.constraint(equalTo: superview.topAnchor),
+            headerStackView.bottomAnchor.constraint(equalTo: credentialStackView.topAnchor, constant: -stackSpacer),
+            headerStackView.leadingAnchor.constraint(equalTo: superview.leadingAnchor),
+            headerStackView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
         ])
         
         NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: rootStackView.bottomAnchor, constant: spaceBetweenTextFieldAndButton),
+            credentialStackView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor, constant: stackSpacer),
+            credentialStackView.bottomAnchor.constraint(equalTo: loginButton.topAnchor, constant: -stackSpacer),
+            credentialStackView.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: spacing * 4),
+            credentialStackView.trailingAnchor.constraint(equalTo: superview.trailingAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            loginButton.topAnchor.constraint(equalTo: credentialStackView.bottomAnchor, constant: stackSpacer),
             loginButton.heightAnchor.constraint(equalToConstant: 45),
             loginButton.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
             loginButton.centerXAnchor.constraint(equalTo: superview.centerXAnchor),

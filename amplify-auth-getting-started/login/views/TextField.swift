@@ -31,8 +31,8 @@ class TextField : UIView {
         imageView.contentMode = .scaleToFill
         imageView.backgroundColor = .clear
         NSLayoutConstraint.activate([
-            imageView.heightAnchor.constraint(equalToConstant: 32),
-            imageView.widthAnchor.constraint(equalToConstant: 32),
+            imageView.heightAnchor.constraint(equalToConstant: 30),
+            imageView.widthAnchor.constraint(equalToConstant: 30),
         ])
         return imageView
     }()
