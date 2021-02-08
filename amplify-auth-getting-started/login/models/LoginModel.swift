@@ -28,4 +28,7 @@ struct LoginData {
     var loginButtonTitle: String
     
     var termsAndConditions: String?
+    
+    var signUpQuestion: String? = "Don't have an account?"
+    var signInQuestion: String? = "Already have an account?"
 }

@@ -8,7 +8,7 @@
 import UIKit
 import UtilityKit
 
-class LoginController: UIViewController, UITextFieldDelegate {
+class LoginController: UIViewController, UITextFieldDelegate {    
     // MARK: - views
     lazy var loginView: LoginView = {
         let loginView = LoginView(frame: .zero)
@@ -38,6 +38,15 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return label
     }()
     
+    // MARK: toggle bewteen sign in or sign up
+    lazy var toggleLoginView: ToggleView = {
+        let view = ToggleView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+
     // MARK: init
     init(loginData: LoginData, loginForm: LoginFormType) {
         super.init(nibName: nil, bundle: nil)
@@ -89,6 +98,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         superview.addSubview(loginView)
         superview.addSubview(agreementLabel)
         superview.addSubview(recoverySuggesionLabel)
+        superview.addSubview(toggleLoginView)
+        
         let spacing: CGFloat = 8
         
         updateLoginViewHeightConstraint()
@@ -99,9 +110,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
             loginView.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -spacing),
         ])
         
-        loginView.backgroundColor = .clear
         NSLayoutConstraint.activate([
-            recoverySuggesionLabel.topAnchor.constraint(equalTo: loginView.bottomAnchor, constant: spacing * 4),
+            toggleLoginView.topAnchor.constraint(equalTo: loginView.bottomAnchor, constant: spacing * 2),
+            toggleLoginView.centerXAnchor.constraint(equalTo: superview.centerXAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            recoverySuggesionLabel.topAnchor.constraint(equalTo: toggleLoginView.bottomAnchor, constant: spacing * 2),
             recoverySuggesionLabel.leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: spacing * 2),
             recoverySuggesionLabel.trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -spacing * 2),
         ])
@@ -145,6 +160,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
             
             agreementLabel.text = nil
             agreementLabel.isHidden = true
+            
+            toggleLoginView.isHidden = false
+            toggleLoginView.label.text = loginData.signUpQuestion
+            toggleLoginView.button.setTitle("Sign up", for: .normal)
             break
             
         case .signUp:
@@ -152,6 +171,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
             
             agreementLabel.text = loginData.termsAndConditions
             agreementLabel.isHidden = false
+            
+            toggleLoginView.isHidden = false
+            toggleLoginView.label.text = loginData.signInQuestion
+            toggleLoginView.button.setTitle("Sign in", for: .normal)
             break
             
         case .signUpConfirmation:
@@ -161,6 +184,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
             
             agreementLabel.text = nil
             agreementLabel.isHidden = true
+            
+            toggleLoginView.isHidden = true
             break
         }
         

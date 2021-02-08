@@ -11,6 +11,7 @@
 		6C2DB1A162859D96E00F32B1 /* Pods_amplify_auth_getting_startedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA3FDBA5E3717697DEDBAEA /* Pods_amplify_auth_getting_startedTests.framework */; };
 		7F5506EDF65242A3B188C30C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0E32FF2B694E658183DD53 /* awsconfiguration.json */; };
 		A368BF6AF5D77010956D9DEE /* Pods_amplify_auth_getting_started.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D4B0221CEED42F343B9627 /* Pods_amplify_auth_getting_started.framework */; };
+		CD83A9AC25D0BC8F00707059 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83A9AB25D0BC8E00707059 /* ToggleView.swift */; };
 		CD928EDE25CFD1330048CE99 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EDD25CFD1330048CE99 /* LoginController.swift */; };
 		CD928EE425CFD1410048CE99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EE225CFD1410048CE99 /* LoginView.swift */; };
 		CD928EE525CFD1410048CE99 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EE325CFD1410048CE99 /* TextField.swift */; };
@@ -56,6 +57,7 @@
 		B3D4B0221CEED42F343B9627 /* Pods_amplify_auth_getting_started.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amplify_auth_getting_started.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA3FDBA5E3717697DEDBAEA /* Pods_amplify_auth_getting_startedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amplify_auth_getting_startedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0E32FF2B694E658183DD53 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
+		CD83A9AB25D0BC8E00707059 /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		CD928EDD25CFD1330048CE99 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CD928EE225CFD1410048CE99 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CD928EE325CFD1410048CE99 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				CD928EE225CFD1410048CE99 /* LoginView.swift */,
 				CD928EE325CFD1410048CE99 /* TextField.swift */,
+				CD83A9AB25D0BC8E00707059 /* ToggleView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				CD928EE425CFD1410048CE99 /* LoginView.swift in Sources */,
 				CD928EEC25CFD15A0048CE99 /* LoginModel.swift in Sources */,
 				CDF8F98625BD0FD60093ECA9 /* SceneDelegate.swift in Sources */,
+				CD83A9AC25D0BC8F00707059 /* ToggleView.swift in Sources */,
 				CD928EEB25CFD15A0048CE99 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
