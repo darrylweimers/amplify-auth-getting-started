@@ -11,17 +11,30 @@
 		6C2DB1A162859D96E00F32B1 /* Pods_amplify_auth_getting_startedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA3FDBA5E3717697DEDBAEA /* Pods_amplify_auth_getting_startedTests.framework */; };
 		7F5506EDF65242A3B188C30C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = CD0E32FF2B694E658183DD53 /* awsconfiguration.json */; };
 		A368BF6AF5D77010956D9DEE /* Pods_amplify_auth_getting_started.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3D4B0221CEED42F343B9627 /* Pods_amplify_auth_getting_started.framework */; };
+		CD52EFF625D8A70100FB7F0E /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52EFF525D8A70100FB7F0E /* BaseCoordinator.swift */; };
+		CD52EFFB25D8A71900FB7F0E /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52EFFA25D8A71900FB7F0E /* Navigator.swift */; };
+		CD52F00725D8ABB000FB7F0E /* AppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F00625D8ABB000FB7F0E /* AppCoordinatorFactory.swift */; };
+		CD52F00D25D8B21500FB7F0E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F00C25D8B21500FB7F0E /* MainCoordinator.swift */; };
+		CD52F01525D8F06300FB7F0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD52F01425D8F06200FB7F0E /* HomeViewController.swift */; };
+		CD660E8625D4DB88009CC75C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD660E8525D4DB88009CC75C /* SignInViewController.swift */; };
+		CD660E8B25D4DB97009CC75C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD660E8A25D4DB97009CC75C /* SignUpViewController.swift */; };
+		CD660E9F25D4DD05009CC75C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD660E9E25D4DD05009CC75C /* Coordinator.swift */; };
+		CD660EA825D4DD51009CC75C /* AuthenticateViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD660EA725D4DD51009CC75C /* AuthenticateViewControllerFactory.swift */; };
+		CD660EB125D4DF13009CC75C /* AuthenticateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD660EB025D4DF13009CC75C /* AuthenticateCoordinator.swift */; };
 		CD83A9AC25D0BC8F00707059 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD83A9AB25D0BC8E00707059 /* ToggleView.swift */; };
 		CD928EDE25CFD1330048CE99 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EDD25CFD1330048CE99 /* LoginController.swift */; };
 		CD928EE425CFD1410048CE99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EE225CFD1410048CE99 /* LoginView.swift */; };
 		CD928EE525CFD1410048CE99 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EE325CFD1410048CE99 /* TextField.swift */; };
-		CD928EEB25CFD15A0048CE99 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EE925CFD15A0048CE99 /* LoginViewModel.swift */; };
 		CD928EEC25CFD15A0048CE99 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EEA25CFD15A0048CE99 /* LoginModel.swift */; };
-		CD928EF225CFD1F00048CE99 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD928EF125CFD1F00048CE99 /* AuthService.swift */; };
 		CD928EFE25CFD6EF0048CE99 /* UtilityKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD928EFD25CFD6EF0048CE99 /* UtilityKit */; };
+		CDDE7C7F25D8961400D365CA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7C7E25D8961400D365CA /* AppCoordinator.swift */; };
+		CDDE7C8D25D8994A00D365CA /* AuthenticateViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7C8C25D8994A00D365CA /* AuthenticateViewModelFactory.swift */; };
+		CDDE7C9625D89A7F00D365CA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7C9525D89A7F00D365CA /* SignUpViewModel.swift */; };
+		CDDE7C9B25D89A9200D365CA /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7C9A25D89A9200D365CA /* SignInViewModel.swift */; };
+		CDDE7CA325D89EA900D365CA /* SignUpConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7CA225D89EA900D365CA /* SignUpConfirmationViewController.swift */; };
+		CDDE7CAE25D89F1100D365CA /* SignUpConfirmationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDE7CAD25D89F1100D365CA /* SignUpConfirmationViewModel.swift */; };
 		CDF8F98425BD0FD60093ECA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F98325BD0FD60093ECA9 /* AppDelegate.swift */; };
 		CDF8F98625BD0FD60093ECA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F98525BD0FD60093ECA9 /* SceneDelegate.swift */; };
-		CDF8F98825BD0FD60093ECA9 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F98725BD0FD60093ECA9 /* AuthController.swift */; };
 		CDF8F98D25BD0FD90093ECA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F98C25BD0FD90093ECA9 /* Assets.xcassets */; };
 		CDF8F99025BD0FD90093ECA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDF8F98E25BD0FD90093ECA9 /* LaunchScreen.storyboard */; };
 		CDF8F99B25BD0FD90093ECA9 /* amplify_auth_getting_startedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF8F99A25BD0FD90093ECA9 /* amplify_auth_getting_startedTests.swift */; };
@@ -57,17 +70,30 @@
 		B3D4B0221CEED42F343B9627 /* Pods_amplify_auth_getting_started.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amplify_auth_getting_started.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA3FDBA5E3717697DEDBAEA /* Pods_amplify_auth_getting_startedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amplify_auth_getting_startedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0E32FF2B694E658183DD53 /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = awsconfiguration.json; sourceTree = "<group>"; };
+		CD52EFF525D8A70100FB7F0E /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		CD52EFFA25D8A71900FB7F0E /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		CD52F00625D8ABB000FB7F0E /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
+		CD52F00C25D8B21500FB7F0E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		CD52F01425D8F06200FB7F0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CD660E8525D4DB88009CC75C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CD660E8A25D4DB97009CC75C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CD660E9E25D4DD05009CC75C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CD660EA725D4DD51009CC75C /* AuthenticateViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateViewControllerFactory.swift; sourceTree = "<group>"; };
+		CD660EB025D4DF13009CC75C /* AuthenticateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateCoordinator.swift; sourceTree = "<group>"; };
 		CD83A9AB25D0BC8E00707059 /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
 		CD928EDD25CFD1330048CE99 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CD928EE225CFD1410048CE99 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		CD928EE325CFD1410048CE99 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		CD928EE925CFD15A0048CE99 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		CD928EEA25CFD15A0048CE99 /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		CD928EF125CFD1F00048CE99 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CDDE7C7E25D8961400D365CA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CDDE7C8C25D8994A00D365CA /* AuthenticateViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateViewModelFactory.swift; sourceTree = "<group>"; };
+		CDDE7C9525D89A7F00D365CA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		CDDE7C9A25D89A9200D365CA /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		CDDE7CA225D89EA900D365CA /* SignUpConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmationViewController.swift; sourceTree = "<group>"; };
+		CDDE7CAD25D89F1100D365CA /* SignUpConfirmationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfirmationViewModel.swift; sourceTree = "<group>"; };
 		CDF8F98025BD0FD60093ECA9 /* amplify-auth-getting-started.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amplify-auth-getting-started.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDF8F98325BD0FD60093ECA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDF8F98525BD0FD60093ECA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CDF8F98725BD0FD60093ECA9 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		CDF8F98C25BD0FD90093ECA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDF8F98F25BD0FD90093ECA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CDF8F99125BD0FD90093ECA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +136,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD52F00525D8AB9700FB7F0E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				CD52F00625D8ABB000FB7F0E /* AppCoordinatorFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		CD52F00B25D8B20300FB7F0E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CD52F00C25D8B21500FB7F0E /* MainCoordinator.swift */,
+				CD52F01425D8F06200FB7F0E /* HomeViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CD660E6E25D4DA8C009CC75C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CD660E8525D4DB88009CC75C /* SignInViewController.swift */,
+				CD660E8A25D4DB97009CC75C /* SignUpViewController.swift */,
+				CDDE7CA225D89EA900D365CA /* SignUpConfirmationViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CD928EB225CFCF9A0048CE99 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,39 +199,45 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		CD928EF025CFD1CD0048CE99 /* authentication */ = {
+		CD928EF025CFD1CD0048CE99 /* Authenticate */ = {
 			isa = PBXGroup;
 			children = (
-				CDF8F98725BD0FD60093ECA9 /* AuthController.swift */,
-				CD928EF825CFD4920048CE99 /* services */,
-				CD928EF725CFD4800048CE99 /* datasources */,
+				CD660EB025D4DF13009CC75C /* AuthenticateCoordinator.swift */,
+				CDDE7C7425D8957100D365CA /* Factory */,
+				CDDE7C9425D89A5B00D365CA /* ViewModels */,
+				CD660E6E25D4DA8C009CC75C /* ViewControllers */,
 			);
-			path = authentication;
+			path = Authenticate;
 			sourceTree = "<group>";
 		};
-		CD928EF625CFD4560048CE99 /* app */ = {
+		CD928EF625CFD4560048CE99 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				CD52F00525D8AB9700FB7F0E /* Factory */,
 				CDF8F98325BD0FD60093ECA9 /* AppDelegate.swift */,
 				CDF8F98525BD0FD60093ECA9 /* SceneDelegate.swift */,
+				CDDE7C7E25D8961400D365CA /* AppCoordinator.swift */,
 			);
-			path = app;
+			path = App;
 			sourceTree = "<group>";
 		};
-		CD928EF725CFD4800048CE99 /* datasources */ = {
+		CDDE7C7425D8957100D365CA /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				CD928EE925CFD15A0048CE99 /* LoginViewModel.swift */,
+				CD660EA725D4DD51009CC75C /* AuthenticateViewControllerFactory.swift */,
+				CDDE7C8C25D8994A00D365CA /* AuthenticateViewModelFactory.swift */,
 			);
-			path = datasources;
+			path = Factory;
 			sourceTree = "<group>";
 		};
-		CD928EF825CFD4920048CE99 /* services */ = {
+		CDDE7C9425D89A5B00D365CA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				CD928EF125CFD1F00048CE99 /* AuthService.swift */,
+				CDDE7C9525D89A7F00D365CA /* SignUpViewModel.swift */,
+				CDDE7C9A25D89A9200D365CA /* SignInViewModel.swift */,
+				CDDE7CAD25D89F1100D365CA /* SignUpConfirmationViewModel.swift */,
 			);
-			path = services;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CDF8F97725BD0FD60093ECA9 = {
@@ -207,8 +266,12 @@
 		CDF8F98225BD0FD60093ECA9 /* amplify-auth-getting-started */ = {
 			isa = PBXGroup;
 			children = (
-				CD928EF625CFD4560048CE99 /* app */,
-				CD928EF025CFD1CD0048CE99 /* authentication */,
+				CD52EFFA25D8A71900FB7F0E /* Navigator.swift */,
+				CD660E9E25D4DD05009CC75C /* Coordinator.swift */,
+				CD52EFF525D8A70100FB7F0E /* BaseCoordinator.swift */,
+				CD928EF625CFD4560048CE99 /* App */,
+				CD928EF025CFD1CD0048CE99 /* Authenticate */,
+				CD52F00B25D8B20300FB7F0E /* Main */,
 				CD928EB225CFCF9A0048CE99 /* login */,
 				CDF8F98C25BD0FD90093ECA9 /* Assets.xcassets */,
 				CDF8F98E25BD0FD90093ECA9 /* LaunchScreen.storyboard */,
@@ -514,16 +577,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDF8F98825BD0FD60093ECA9 /* AuthController.swift in Sources */,
+				CD660E9F25D4DD05009CC75C /* Coordinator.swift in Sources */,
 				CD928EDE25CFD1330048CE99 /* LoginController.swift in Sources */,
+				CDDE7C9B25D89A9200D365CA /* SignInViewModel.swift in Sources */,
+				CD52EFFB25D8A71900FB7F0E /* Navigator.swift in Sources */,
+				CD660EB125D4DF13009CC75C /* AuthenticateCoordinator.swift in Sources */,
+				CDDE7C9625D89A7F00D365CA /* SignUpViewModel.swift in Sources */,
+				CDDE7C7F25D8961400D365CA /* AppCoordinator.swift in Sources */,
+				CDDE7CA325D89EA900D365CA /* SignUpConfirmationViewController.swift in Sources */,
 				CDF8F98425BD0FD60093ECA9 /* AppDelegate.swift in Sources */,
-				CD928EF225CFD1F00048CE99 /* AuthService.swift in Sources */,
+				CD52EFF625D8A70100FB7F0E /* BaseCoordinator.swift in Sources */,
+				CD52F01525D8F06300FB7F0E /* HomeViewController.swift in Sources */,
+				CD660E8625D4DB88009CC75C /* SignInViewController.swift in Sources */,
+				CDDE7CAE25D89F1100D365CA /* SignUpConfirmationViewModel.swift in Sources */,
+				CD52F00D25D8B21500FB7F0E /* MainCoordinator.swift in Sources */,
 				CD928EE525CFD1410048CE99 /* TextField.swift in Sources */,
 				CD928EE425CFD1410048CE99 /* LoginView.swift in Sources */,
 				CD928EEC25CFD15A0048CE99 /* LoginModel.swift in Sources */,
+				CD660E8B25D4DB97009CC75C /* SignUpViewController.swift in Sources */,
+				CD660EA825D4DD51009CC75C /* AuthenticateViewControllerFactory.swift in Sources */,
+				CD52F00725D8ABB000FB7F0E /* AppCoordinatorFactory.swift in Sources */,
 				CDF8F98625BD0FD60093ECA9 /* SceneDelegate.swift in Sources */,
 				CD83A9AC25D0BC8F00707059 /* ToggleView.swift in Sources */,
-				CD928EEB25CFD15A0048CE99 /* LoginViewModel.swift in Sources */,
+				CDDE7C8D25D8994A00D365CA /* AuthenticateViewModelFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
