@@ -18,6 +18,13 @@ This project is an example of using `AWS cognito` and `coordinator pattern` to c
 - Swift packages: UtilityKit 1.0.1
 - Cocoapods: Amplify, AmplifyPlugins/AWSCognitoAuthPlugin
 
+#### Swift Package Manager
+
+- File > Swift Packages > Add Package Dependency
+- Add `https://github.com/darrylweimers/UtilityKit`
+- Select "Up to Next Major" with "1.0.1"
+
+#### Cocoapod
 ```ruby
 # Uncomment the next line to define a global platform for your project
 platform :ios, '14.0'
@@ -41,6 +48,7 @@ target 'amplify-auth-getting-started' do
 
 end
 ```
+
 ## Credits
 
 - Darryl Weimers
