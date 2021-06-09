@@ -8,12 +8,36 @@
 import UIKit
 import Amplify
 
-
 protocol AuthenticateCoordinatorDelegate: class {
     func authenticateCompleted(success: Bool)
 }
 
-class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerDelegate, SignUpViewControllerDelegate, SignUpConfirmationViewControllerDelegate {
+class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerDelegate, SignUpViewControllerDelegate, SignUpConfirmationViewControllerDelegate, UINavigationControllerDelegate {
+    
+    // MARK: navigation controller handler
+    // Boiler plate code
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        // Read the view controller we’re moving from.
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+
+        // Check whether our view controller array already contains that view controller. If it does it means we’re pushing a different view controller on top rather than popping it, so exit.
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        // We’re still here – it means we’re popping the view controller, so we can check whether it’s a buy view controller
+        navigationControllerDidPopViewController(viewController: fromViewController)
+    }
+    
+    // delegate
+    func navigationControllerDidPopViewController(viewController: UIViewController) {
+        if let destination = findDestination(for: viewController) {
+            print("pop \(destination)")
+            destinationToChildViewControllers[destination] = nil
+        }
+    }
     
     // MARK: delegation
     weak var delegate: AuthenticateCoordinatorDelegate?
@@ -32,37 +56,53 @@ class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerD
         self.navigationController = navigationController
         self.viewControllerFactory = viewControllerFactory
         self.viewModelFactory = viewModelFactory
+        super.init()
+        self.navigationController?.delegate = self
     }
     
     // MARK: child view controllers
-    private var signUpViewController: SignUpViewController?
-    private var signUpConfirmationViewController: SignUpConfirmationViewController?
-    private var signInViewController: SignInViewController?
+    private var destinationToChildViewControllers: [Destination: UIViewController] =  [Destination: UIViewController]()
+    
+    private func getViewController(for destination: Destination) -> UIViewController {
+        if let viewController = destinationToChildViewControllers[destination] {
+            return viewController
+        }
+        
+        return makeViewController(for: destination)
+    }
+    
+    private func findDestination(for viewController: UIViewController) -> Destination? {
+        for (destination, destinationViewController) in destinationToChildViewControllers {
+            if destinationViewController === viewController {
+                return destination
+            }
+        }
+        return nil
+    }
     
     private func makeViewController(for destination: Destination) -> UIViewController {
         switch destination {
         case .signIn:
-            if signInViewController == nil {
-                signInViewController = viewControllerFactory.makeSignInViewController()
-                signInViewController?.delegate = self
-            }
-            return signInViewController!
+            let viewController = viewControllerFactory.makeSignInViewController()
+            viewController.delegate = self
+            destinationToChildViewControllers[destination] = viewController
+            return viewController
             
         case .signUp:
-            if signUpViewController == nil {
-                signUpViewController = viewControllerFactory.makeSignUpViewController()
-                signUpViewController?.delegate = self
-            }
-            return signUpViewController!
+            let viewController = viewControllerFactory.makeSignUpViewController()
+            viewController.delegate = self
+            destinationToChildViewControllers[destination] = viewController
+            return viewController
             
         case .signUpConfirmation:
-            if signUpConfirmationViewController == nil {
-                signUpConfirmationViewController = viewControllerFactory.makeSignUpConfirmationViewController()
-                signUpConfirmationViewController?.delegate = self
-            }
-            return signUpConfirmationViewController!
+            let viewController = viewControllerFactory.makeSignUpConfirmationViewController()
+            viewController.delegate = self
+            destinationToChildViewControllers[destination] = viewController
+            return viewController
         }
     }
+    
+
     
     // MARK: navigate
     // Here we define a set of supported destinations using an
@@ -75,7 +115,7 @@ class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerD
     }
     
     func navigate(to destination: Destination) {
-        let viewController = makeViewController(for: destination)
+        let viewController = getViewController(for: destination)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -113,8 +153,10 @@ class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerD
                     print("Delivery details \(String(describing: deliveryDetails))")
                     print("Switch to confirmation login form")
                     DispatchQueue.main.async {
+                        let viewController: SignUpConfirmationViewController = self.getViewController(for: .signUpConfirmation) as! SignUpConfirmationViewController
+                        viewController.loginView.usernameTextField.textField.text = username
                         self.navigate(to: .signUpConfirmation)
-                        self.signUpConfirmationViewController?.loginView.usernameTextField.textField.text = username
+                        
                     }
                 } else {
                     print("SignUp Complete")
@@ -135,8 +177,9 @@ class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerD
             case .success:
                 print("Confirm signUp succeeded")
                 DispatchQueue.main.async {
+                    let viewController: SignInViewController = self.getViewController(for: .signIn) as! SignInViewController
+                    viewController.loginView.usernameTextField.textField.text = username
                     self.navigate(to: .signIn)
-                    self.signInViewController?.loginView.usernameTextField.textField.text = username
                 }
             case .failure(let error):
                 print("An error occurred while confirming sign up \(error)")
@@ -145,7 +188,7 @@ class AuthenticateCoordinator: BaseCoordinator, Navigator, SignInViewControllerD
     }
     
     func switchToSignIn(viewController: SignUpViewController) {
-        let signInviewController = makeViewController(for: .signIn)
+        let signInviewController = getViewController(for: .signIn)
         self.navigationController?.setViewControllers([signInviewController], animated: true)
     }
     

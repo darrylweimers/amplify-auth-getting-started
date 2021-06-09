@@ -8,6 +8,7 @@
 import Foundation
 
 protocol Coordinator: class {
+    
     // MARK: coordinators
     var childCoordinators: [Coordinator] {get set}
     func addCoordinator(_ coordinator: Coordinator)

@@ -8,6 +8,7 @@
 import UIKit
 
 class ToggleView : UIView {
+    
     lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false

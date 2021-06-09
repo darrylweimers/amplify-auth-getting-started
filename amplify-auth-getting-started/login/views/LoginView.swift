@@ -131,10 +131,6 @@ class LoginView: UIView {
         ])
         
     }
-    
-    
-
-    
 }
 
 
